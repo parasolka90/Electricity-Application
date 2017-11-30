@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Tariffs</h1>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-primary" (click)="redirectNewTariffPage()">New Tariff</button>
+            </div>
+          </div>
+
+        </header>
+      </section>
+
+      <section class="main">
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Tariff Symbol</th>
+            <th>Equation</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let tariff of tariff">
+            <th scope="row">{{tariff.id}}</th>
+            <td>{{tariff.tariffSymbol}}</td>
+            <td>{{tariff.equation}}</td>
+            <td>
+              <button type="button" class="btn btn-success" (click)="editTariffPage(tariff)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deleteTariff(tariff)">Delete</button>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="container">
+<div class="row">
+  <div class="col">
+    <section>
+      <header class="header">
+        <div class="row">
+          <div class="col-md-4">
+            <h1>Reading</h1>
+          </div>
+          <div class="col-md-6">
+
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-primary" (click)="redirectNewReadingPage()">New Reading</button>
+          </div>
+        </div>
+
+      </header>
+    </section>
+
+    <section class="main">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Reading</th>
+          <th>Meter</th>
+          <th>Tariff</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let reading of readings">
+          <th scope="row">{{reading.id}}</th>
+          <td>{{reading.startingDate| date:'yyyy-MM-dd'}}</td>
+          <td>{{reading.endingDate| date:'yyyy-MM-dd'}}</td>
+          <td>{{reading.reading}}</td>
+          <td>{{reading.meter.id}}</td>
+          <td>{{reading.tariff.tariffSymbol}}</td>
+          <td>
+            <button type="button" class="btn btn-success" (click)="editReadingPage(reading)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="deleteReading(reading)">Delete</button>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </section>
+  </div>
+</div>
+</div>

@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Rates</h1>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-primary" (click)="redirectNewRatePage()">New Rate</button>
+            </div>
+          </div>
+
+        </header>
+      </section>
+
+      <section class="main">
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Price</th>
+            <th>Tariff</th>
+            <th>Period</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let rate of rates">
+            <th scope="row">{{rate.id}}</th>
+            <td>{{rate.price}}</td>
+            <td>{{rate.tariff.tariffSymbol}}</td>
+            <td>{{rate.period.year}}-{{rate.period.month}}</td>
+            <td>
+              <button type="button" class="btn btn-success" (click)="editRatePage(rate)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deleteRate(rate)">Delete</button>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+package com.electricityapp.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.List;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class TariffDto {
+    private Long id;
+
+    private String tariffSymbol;
+
+    private String equation;
+
+    private List<Reading> reading;
+
+    private List<Rate> rate;
+}

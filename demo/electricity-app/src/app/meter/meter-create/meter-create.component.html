@@ -1,0 +1,21 @@
+<div class="container">
+<div class="row">
+  <div class="col">
+    <section>
+      <form novalidate [formGroup]="meterForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <div class="form-group">
+            <label>Client Id</label>
+            <input type="text"
+                   class="form-control"
+                   formControlName="clientId">
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary"  [disabled]="!meterForm.valid" >Submit</button>
+        <button type="button" class="btn btn-warning" (click)="redirectMeterPage()">Cancel</button>
+        <pre>{{meterForm.value | json}}</pre>
+      </form>
+    </section>
+  </div>
+</div>
+</div>

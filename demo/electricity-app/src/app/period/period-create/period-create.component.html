@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <form novalidate [formGroup]="periodForm" (ngSubmit)="onSubmit()">
+          <fieldset>
+            <div class="form-group">
+              <label>Year</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="year">
+            </div>
+
+            <div class="form-group">
+              <label>Month</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="month">
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary"  [disabled]="!periodForm.valid" >Submit</button>
+          <button type="button" class="btn btn-warning" (click)="redirectPeriodPage()">Cancel</button>
+          <pre>{{periodForm.value | json}}</pre>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

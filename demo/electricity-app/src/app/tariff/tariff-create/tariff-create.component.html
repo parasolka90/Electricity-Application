@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <form novalidate [formGroup]="tariffForm" (ngSubmit)="onSubmit()">
+          <fieldset>
+            <div class="form-group">
+              <label>Tariff Symbol</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="tariffSymbol">
+            </div>
+
+            <div class="form-group">
+              <label>Equation</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="equation">
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary"  [disabled]="!tariffForm.valid" >Submit</button>
+          <button type="button" class="btn btn-warning" (click)="redirectTariffPage()">Cancel</button>
+          <pre>{{tariffForm.value | json}}</pre>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

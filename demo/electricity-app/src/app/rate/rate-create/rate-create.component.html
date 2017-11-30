@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <form novalidate [formGroup]="rateForm" (ngSubmit)="onSubmit()">
+          <fieldset>
+            <div class="form-group">
+              <label>Price</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="price">
+            </div>
+
+            <div class="form-group">
+              <label>Tariff ID</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="tariff">
+              <div class="form-group">
+                <label>Period ID</label>
+                <input type="text"
+                       class="form-control"
+                       formControlName="period">
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary"  [disabled]="!rateForm.valid" >Submit</button>
+          <button type="button" class="btn btn-warning" (click)="redirectRatePage()">Cancel</button>
+          <pre>{{rateForm.value | json}}</pre>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
